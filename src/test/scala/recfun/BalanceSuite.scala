@@ -17,6 +17,10 @@ class BalanceSuite extends FunSuite {
     assert(balance(")".toList)===false)
   }
 
+  test("(") {
+    assert(balance("(".toList)===false)
+  }
+
   test("'(if (zero? x) max (/ 1 x))' is balanced.") {
     //assert(balance("(if (zero? x) max (/ 1 x))".toList))
   }
