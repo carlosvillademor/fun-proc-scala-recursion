@@ -19,7 +19,7 @@ object Main {
   /**
    * Exercise 2
    */
-  def balance(chars: List[Char]): Boolean = true
+  def balance(chars: List[Char]): Boolean = if(!chars.isEmpty) !chars.head.equals(')') else true
 
   /**
    * Exercise 3
