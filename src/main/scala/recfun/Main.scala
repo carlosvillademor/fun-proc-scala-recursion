@@ -19,19 +19,23 @@ object Main {
   /**
    * Exercise 2
    */
-  def balance(chars: List[Char]): Boolean = if(chars.isEmpty) true else isBalanced(0, 0, chars.head, chars.tail)
+  def balance(chars: List[Char]): Boolean = {
   
-  def isBalanced(leftBrackets: Int, rightBrackets: Int, character: Char, restOfCharacters: List[Char]): Boolean = 
-      if(restOfCharacters.isEmpty) balanced(leftBrackets, rightBrackets, character) 
-      else isBalanced(newLeftBrackets(leftBrackets, character), newRightBrackets(rightBrackets, character), restOfCharacters.head, restOfCharacters.tail)
-      
-  def newLeftBrackets(leftBrackets: Int, character: Char): Int = if(character.equals('(')) leftBrackets + 1 else leftBrackets
+	  def isBalanced(leftBrackets: Int, rightBrackets: Int, character: Char, restOfCharacters: List[Char]): Boolean = {
 
-  def newRightBrackets(rightBrackets: Int, character: Char): Int = if(character.equals(')')) rightBrackets + 1 else rightBrackets
+		  def newLeftBrackets(): Int = if(character.equals('(')) leftBrackets + 1 else leftBrackets
+	
+		  def newRightBrackets(): Int = if(character.equals(')')) rightBrackets + 1 else rightBrackets
+		
+		  def balanced(): Boolean = 
+		    (leftBrackets == rightBrackets && !character.equals('(') && !character.equals(')')) || (leftBrackets == rightBrackets + 1 && character.equals(')'))
 
-  def balanced(leftBrackets: Int, rightBrackets: Int, character: Char): Boolean = 
-    (leftBrackets == rightBrackets && !character.equals('(') && !character.equals(')')) || (leftBrackets == rightBrackets + 1 && character.equals(')'))
-  
+	      if(restOfCharacters.isEmpty) balanced() 
+	      else isBalanced(newLeftBrackets(), newRightBrackets(), restOfCharacters.head, restOfCharacters.tail)
+	  }
+	      	
+	  if(chars.isEmpty) true else isBalanced(0, 0, chars.head, chars.tail)
+  }
   /**
    * Exercise 3
    */
