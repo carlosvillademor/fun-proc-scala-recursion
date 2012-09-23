@@ -19,7 +19,7 @@ object Main {
   /**
    * Exercise 2
    */
-  def balance(chars: List[Char]): Boolean = ???
+  def balance(chars: List[Char]): Boolean = true
 
   /**
    * Exercise 3
