@@ -14,7 +14,7 @@ object Main {
   /**
    * Exercise 1
    */
-  def pascal(c: Int, r: Int): Int = ???
+  def pascal(c: Int, r: Int): Int = if(c<0) 0 else 1
 
   /**
    * Exercise 2
