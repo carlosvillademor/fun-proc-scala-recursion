@@ -14,11 +14,11 @@ class BalanceSuite extends FunSuite {
   }
 
   test(")") {
-    assert(balance(")".toList)===false)
+    assert(!balance(")".toList))
   }
 
   test("(") {
-    assert(balance("(".toList)===false)
+    assert(!balance("(".toList))
   }
 
   test("'(if (zero? x) max (/ 1 x))' is balanced.") {
@@ -30,7 +30,7 @@ class BalanceSuite extends FunSuite {
   }
 
   test("':-)' is unbalanced.") {
-    //assert(!balance(":-)".toList))
+    assert(!balance(":-)".toList))
   }
 
   test("Counting is not enough.") {
