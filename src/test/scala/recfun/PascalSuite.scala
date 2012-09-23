@@ -10,7 +10,11 @@ class PascalSuite extends FunSuite {
   import Main.pascal
   
   test("col=-1, row=0") {
-    assert(pascal(-1,0) == 0)
+    assert(pascal(-1,0) === 0)
+  }
+
+  test("col=1, row=-2") {
+    assert(pascal(1,-2) === 0)
   }
 
   test("col=0,row=2") {
