@@ -36,8 +36,10 @@ object Main {
 	      	
 	  if(chars.isEmpty) true else isBalanced(0, 0, chars.head, chars.tail)
   }
+  
   /**
    * Exercise 3
    */
-  def countChange(money: Int, coins: List[Int]): Int = ???
+  def countChange(money: Int, coins: List[Int]): Int = if(money==0) 0 else 0
+
 }
