@@ -40,6 +40,13 @@ object Main {
   /**
    * Exercise 3
    */
-  def countChange(money: Int, coins: List[Int]): Int = if(money==0 || coins.isEmpty) 0 else 1
+  def countChange(money: Int, coins: List[Int]): Int = {
+    def areAllCoinsBiggerThanAmount(amount: Int, coinsList: List[Int]): Boolean = 
+      if(coinsList.isEmpty) true 
+      else if(coinsList.head <= amount) false 
+      else areAllCoinsBiggerThanAmount(amount, coinsList.tail)
+    
+    if(money == 0 || coins.isEmpty || areAllCoinsBiggerThanAmount(money, coins)) 0 else 1
+  }
 
 }
